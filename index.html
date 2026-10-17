@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbfbfa">
+  <meta name="description" content="HALCYON">
+  <title>HALCYON</title>
+  <link rel="icon" href="/assets/clawd-404.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/clawd-motions.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body data-theme="light">
+  <header class="site-header" id="top">
+    <nav class="glass-nav" aria-label="主导航">
+      <a class="nav-link is-active" href="#home" data-nav="home">主页</a>
+      <a class="nav-link" href="#posts" data-nav="posts">内容</a>
+      <a class="nav-link" href="#tags" data-nav="tags">标签</a>
+      <a class="nav-link" href="#posts" data-nav="posts" data-search-entry>搜索</a>
+      <a class="nav-link" href="#about" data-nav="about">关于</a>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换主题"></button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-shell" id="home" aria-label="HALCYON 首页">
+      <div class="hero-copy">
+        <div class="hero-index" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hero-title-wrap"><h1>HALCYON</h1><div class="title-rule" aria-hidden="true"></div></div>
+        <div class="hero-bottom-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <div class="hero-mascot" id="home-clawd-wrap">
+        <div class="mascot-halo" aria-hidden="true"></div>
+        <div class="home-clawd-mount" id="home-clawd" role="button" tabindex="0" aria-label="Clawd 互动动画"></div>
+        <span class="mascot-orbit orbit-one" aria-hidden="true"></span><span class="mascot-orbit orbit-two" aria-hidden="true"></span>
+      </div>
+      <div class="hero-bottom-line" aria-hidden="true"><span></span><span></span></div>
+    </section>
+
+    <section class="content-section section-shell" id="posts" aria-label="内容">
+      <div class="section-head"><div class="section-glyph" aria-hidden="true"><span></span><span></span><span></span></div><span class="section-line" aria-hidden="true"></span></div>
+      <div class="post-grid" id="post-grid" aria-live="polite"></div>
+      <div class="post-status" id="post-status" role="status" aria-live="polite" hidden></div>
+      <div class="collection-art" id="collection-art" aria-hidden="true">
+        <div class="collection-arc arc-a"></div><div class="collection-arc arc-b"></div>
+        <div class="collection-center"><i></i><i></i><i></i><i></i></div>
+        <div class="collection-bars"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="tags-section section-shell" id="tags" aria-label="标签">
+      <div class="section-head"><div class="section-glyph section-glyph-tags" aria-hidden="true"><span></span><span></span><span></span></div><span class="section-line" aria-hidden="true"></span></div>
+      <div class="tag-cloud" id="tag-cloud"></div>
+      <div class="tag-ornament" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </section>
+
+    <section class="about-section section-shell" id="about" aria-label="关于">
+      <div class="section-head"><div class="section-glyph section-glyph-about" aria-hidden="true"><span></span><span></span><span></span></div><span class="section-line" aria-hidden="true"></span></div>
+      <div class="about-composition" aria-hidden="true"><div class="about-ring ring-large"></div><div class="about-ring ring-small"></div><div class="about-block block-left"></div><div class="about-block block-right"></div><div class="about-cross"></div></div>
+    </section>
+  </main>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="返回顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+  </button>
+
+  <section class="article-layer" id="article-layer" aria-hidden="true">
+    <article class="article-page" id="article-page" tabindex="-1">
+      <div class="article-tools"><button class="icon-button back-button" id="article-back" aria-label="返回内容列表" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button><button class="icon-button article-theme-toggle" id="article-theme-toggle" type="button" aria-label="切换主题"></button></div>
+      <div class="article-inner" id="article-inner"></div>
+      <section class="comment-section" id="comment-section" aria-label="评论" hidden>
+        <div class="comment-section-head"><div class="comment-rule" aria-hidden="true"><span></span><span></span><span></span></div><button class="comment-clawd-mount" id="comment-clawd" type="button" aria-label="Clawd 互动动画"></button></div>
+        <div id="twikoo-container"></div>
+      </section>
+    </article>
+  </section>
+
+  <section class="admin-layer" id="admin-layer" aria-hidden="true">
+    <div class="admin-panel">
+      <div class="admin-tools"><a class="admin-home-link" href="#home" aria-label="返回首页">HALCYON</a><button class="icon-button" id="admin-close" aria-label="关闭管理界面" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <form class="admin-login" id="admin-login-form">
+        <label for="admin-token">管理员令牌</label>
+        <input id="admin-token" name="token" type="password" autocomplete="current-password" required>
+        <button class="admin-primary" type="submit">进入管理</button>
+        <p class="admin-error" id="admin-login-error" role="alert" hidden></p>
+      </form>
+      <div class="admin-editor-wrap" id="admin-editor-wrap" hidden>
+        <div class="admin-list" id="admin-list"></div>
+        <form class="post-editor" id="post-editor">
+          <input type="hidden" id="post-id">
+          <label for="post-title">标题</label><input id="post-title" maxlength="180" required>
+          <label for="post-slug">文章路径</label><input id="post-slug" maxlength="180" autocomplete="off">
+          <label for="post-tags">标签</label><input id="post-tags" maxlength="400" autocomplete="off">
+          <label class="published-toggle"><input type="checkbox" id="post-published" checked><span>发布文章</span></label>
+          <label for="post-content">正文（支持 Markdown）</label><textarea id="post-content" rows="14" required></textarea>
+          <div class="editor-actions"><button class="admin-primary" type="submit">保存文章</button><button class="admin-secondary" id="post-new" type="button">新建</button><button class="admin-danger" id="post-delete" type="button" hidden>删除</button></div>
+          <p class="admin-error" id="post-editor-error" role="alert" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" aria-hidden="true"><span class="footer-dot"></span><span class="footer-line"></span><span class="footer-dot"></span></footer>
+</body>
+</html>
